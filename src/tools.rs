@@ -158,7 +158,7 @@ pub fn function_tool_attr_impl(attr: TokenStream, item: TokenStream) -> TokenStr
 
         mod #init_module_name {
             #[used]
-            #[link_section = ".CRT$XCU"]
+            #[unsafe(link_section = ".CRT$XCU")]
             static INIT: extern "C" fn() = {
                 extern "C" fn initialize() {
                     use std::sync::Arc;
